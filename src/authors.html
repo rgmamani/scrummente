@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors & History - Agile Manifesto</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='4' fill='white'/></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563eb",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Authors & History - Agile Manifesto</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 py-4 lg:px-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+            <div class="flex items-center gap-4">
+                <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+                    <span class="material-symbols-outlined !text-2xl">history_edu</span>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Agile Manifesto</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Manifesto</a>
+                <a href="principles.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Principles</a>
+                <a href="authors.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary bg-primary/10 rounded-lg">Authors</a>
+                <a href="translations.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Translations</a>
+            </div>
+        </header>
+
+        <main class="flex flex-1 justify-center py-12 px-6 lg:px-20">
+            <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                <!-- Hero Section -->
+                <div class="mb-12">
+                    <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">The Snowbird Legacy</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Established at the summit of the Wasatch Range, 2001</p>
+                </div>
+
+                <!-- History Text -->
+                <div class="max-w-3xl mb-16">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white border-l-4 border-primary pl-4 mb-6">Our Foundation</h2>
+                    <div class="flex flex-col gap-6 text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+                        <p>The foundation of our organization traces back to the summits of Snowbird, Utah, where a vision of excellence was first established during a historic gathering of minds. It was here, amidst the rugged beauty of the Wasatch Range, that the core principles of innovation and collaborative integrity were codified.</p>
+                        <p>Over the following decades, we have evolved from a small collective of dedicated practitioners into a global standard-bearer. Our history is marked by a relentless pursuit of quality and a commitment to transparency that remains unchanged since the first ink hit the parchment at the original summit meeting.</p>
+                    </div>
+                </div>
+
+                <!-- Signatories Grid -->
+                <section>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-8">
+                        <span class="material-symbols-outlined text-primary">signature</span>
+                        Original Signatories
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Signatory Card 1 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Kent Beck</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Extreme Programming</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"Simplicity is the ultimate sophistication."</p>
+                        </div>
+
+                        <!-- Signatory Card 2 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Mike Beedle</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Scrum</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"Working software over comprehensive documentation."</p>
+                        </div>
+
+                        <!-- Signatory Card 3 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Ward Cunningham</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Technology</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"The simplest thing that could possibly work."</p>
+                        </div>
+
+                        <!-- Signatory Card 4 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Martin Fowler</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Thought Leader</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"Any fool can write code that a computer can understand."</p>
+                        </div>
+
+                        <!-- Signatory Card 5 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Ken Schwaber</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Scrum Alliance</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"Bring the work to the people."</p>
+                        </div>
+
+                        <!-- Signatory Card 6 -->
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Jeff Sutherland</h4>
+                                    <p class="text-primary text-xs font-semibold uppercase tracking-wider">Scrum</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug italic">"Create a fun place to work."</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20 mt-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="size-6 bg-primary/20 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined !text-sm text-primary">code</span>
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 text-sm font-medium">&copy; 2001-2024 Agile Manifesto Authors</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="translations.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">translate</span>
+                    </a>
+                    <a href="authors.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">people</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

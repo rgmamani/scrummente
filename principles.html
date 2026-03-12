@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principles behind the Agile Manifesto</title>
+    <meta name="description" content="The twelve principles behind the Agile Manifesto. A foundational guide for high-performing software development teams.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='4' fill='white'/></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563eb",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        #mobile-menu.hidden-menu { transform: translateX(100%); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 py-4 lg:px-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-4 group transition-all">
+                <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white group-hover:scale-105 transition-transform shadow-md">
+                    <span class="material-symbols-outlined !text-2xl">layers</span>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors">Agile Manifesto</h2>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Manifesto</a>
+                <a href="principles.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary bg-primary/10 rounded-lg">Principles</a>
+                <a href="authors.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Authors</a>
+                <a href="translations.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Translations</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden size-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-slate-900 hidden-menu md:hidden">
+            <div class="flex flex-col h-full p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center gap-4 group">
+                        <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white group-active:scale-95 transition-transform">
+                            <span class="material-symbols-outlined !text-2xl">layers</span>
+                        </div>
+                        <h2 class="text-slate-900 dark:text-white text-xl font-bold">Agile Manifesto</h2>
+                    </a>
+                    <button id="menu-close" class="size-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Manifesto</a>
+                    <a href="principles.html" class="px-4 py-3 text-lg font-bold text-primary bg-primary/10 rounded-xl">Principles</a>
+                    <a href="authors.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Authors</a>
+                    <a href="translations.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Translations</a>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden-menu');
+                document.body.style.overflow = 'hidden';
+            });
+
+            menuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            });
+        </script>
+
+        <main class="flex flex-1 justify-center py-12 px-6 lg:px-20">
+            <div class="max-w-6xl w-full">
+                <!-- Hero Section -->
+                <div class="mb-16">
+                    <h1 class="text-slate-900 dark:text-white text-5xl font-black leading-tight tracking-tighter lg:text-7xl mb-4">The Twelve <span class="text-primary/60">Principles</span></h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg lg:text-xl font-medium max-w-2xl">A foundational guide for building high-performing software development teams and culture.</p>
+                </div>
+
+            <!-- Asymmetric Principles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
+                <!-- Principle 01 -->
+                <div class="lg:col-span-8 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">01</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-2xl font-bold mb-3">Customer Satisfaction</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 02 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-primary/5 rounded-xl border border-primary/10">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">02</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Welcome Change</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 03 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">03</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Frequent Delivery</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 04 - Featured (Subtle Highlight) -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-slate-50 dark:bg-slate-800/50 rounded-xl shadow-sm border border-primary/20 relative overflow-hidden group">
+                    <div class="absolute -right-10 -top-10 opacity-5 transition-transform group-hover:scale-110">
+                        <span class="material-symbols-outlined text-[160px] text-primary">handshake</span>
+                    </div>
+                    <span class="text-6xl font-black text-primary/10">04</span>
+                    <div class="mt-auto relative z-10">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Business & Developers</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Business people and developers must work together daily throughout the project.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 05 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">05</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Motivated Individuals</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 06 -->
+                <div class="lg:col-span-6 flex flex-col gap-6 p-8 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">06</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Face-to-Face Interaction</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 07 -->
+                <div class="lg:col-span-6 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">07</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Working Software</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Working software is the primary measure of progress.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 08 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">08</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Sustainable Development</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 09 -->
+                <div class="lg:col-span-8 flex flex-col gap-6 p-8 bg-primary/10 rounded-xl border border-primary/20">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">09</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-2xl font-bold mb-3">Technical Excellence</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg">Continuous attention to technical excellence and good design enhances agility.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 10 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">10</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Simplicity</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">Simplicity—the art of maximizing the amount of work not done—is essential.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 11 -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+                    <span class="text-6xl font-black text-slate-300 dark:text-slate-700">11</span>
+                    <div class="mt-auto">
+                        <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Self-Organizing Teams</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base">The best architectures, requirements, and designs emerge from self-organizing teams.</p>
+                    </div>
+                </div>
+
+                <!-- Principle 12 - Featured (Subtle Highlight) -->
+                <div class="lg:col-span-4 flex flex-col gap-6 p-8 bg-slate-900 text-white rounded-xl shadow-lg border border-primary/40">
+                    <span class="text-6xl font-black text-white/10">12</span>
+                    <div class="mt-auto">
+                        <h3 class="text-white text-xl font-bold mb-2">Reflect and Adjust</h3>
+                        <p class="text-white/80 text-base">At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Link -->
+            <div class="text-center mt-20">
+                <a href="index.html" class="inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary/50 transition-all shadow-sm hover:shadow-lg hover:-translate-y-0.5">
+                    <span class="material-symbols-outlined text-primary">arrow_back</span>
+                    <span class="font-bold text-lg">Back to Manifesto</span>
+                </a>
+            </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20 mt-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="size-6 bg-primary/20 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined !text-sm text-primary">code</span>
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 text-sm font-medium">&copy; 2026 Pichers & Pichers</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="translations.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">translate</span>
+                    </a>
+                    <a href="authors.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">people</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "agile-manifesto-zen",
+  "version": "1.0.0",
+  "description": "Minimalist Zen redesign of the Agile Manifesto",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

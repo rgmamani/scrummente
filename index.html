@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto for Agile Software Development</title>
+    <meta name="description" content="The Manifesto for Agile Software Development. Uncovering better ways of developing software by doing it and helping others do it.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='4' fill='white'/></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563eb",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .manifesto-gradient { background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0) 100%); }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        #mobile-menu.hidden-menu { transform: translateX(100%); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 py-4 lg:px-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-4 group transition-all">
+                <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white group-hover:scale-105 transition-transform shadow-md">
+                    <span class="material-symbols-outlined !text-2xl">menu_book</span>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight group-hover:text-primary transition-colors">Agile Manifesto</h2>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-primary bg-primary/10 rounded-lg">Manifesto</a>
+                <a href="principles.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Principles</a>
+                <a href="authors.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Authors</a>
+                <a href="translations.html" class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Translations</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden size-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-slate-900 hidden-menu md:hidden">
+            <div class="flex flex-col h-full p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center gap-4 group">
+                        <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white group-active:scale-95 transition-transform">
+                            <span class="material-symbols-outlined !text-2xl">menu_book</span>
+                        </div>
+                        <h2 class="text-slate-900 dark:text-white text-xl font-bold">Agile Manifesto</h2>
+                    </a>
+                    <button id="menu-close" class="size-10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-4">
+                    <a href="index.html" class="px-4 py-3 text-lg font-bold text-primary bg-primary/10 rounded-xl">Manifesto</a>
+                    <a href="principles.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Principles</a>
+                    <a href="authors.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Authors</a>
+                    <a href="translations.html" class="px-4 py-3 text-lg font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Translations</a>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden-menu');
+                document.body.style.overflow = 'hidden';
+            });
+
+            menuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            });
+        </script>
+
+        <!-- Main Content -->
+        <main class="flex flex-1 justify-center py-12 px-6 lg:px-40">
+            <div class="layout-content-container flex flex-col max-w-[800px] flex-1 text-center items-center">
+                <!-- Hero Section -->
+                <div class="mb-16 manifesto-gradient p-8 rounded-3xl border border-primary/10">
+                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-primary uppercase bg-primary/10 rounded-full">Agile Software Development</span>
+                    <h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-8">Manifesto for Agile Software Development</h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto italic">"We are uncovering better ways of developing software by doing it and helping others do it."</p>
+                </div>
+
+                <!-- Values -->
+                <div class="w-full flex flex-col gap-6 mb-16">
+                    <h4 class="text-slate-400 text-sm font-bold leading-normal tracking-[0.2em] mb-4 uppercase">Through this work we have come to value:</h4>
+                    <div class="grid gap-4 w-full">
+                        <div class="group flex items-center justify-center p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 text-xl md:text-2xl">
+                                <span class="font-extrabold text-slate-900 dark:text-white">Individuals and interactions</span>
+                                <span class="text-primary font-bold italic opacity-60">over</span>
+                                <span class="text-slate-500 dark:text-slate-500 font-medium">processes and tools</span>
+                            </div>
+                        </div>
+                        <div class="group flex items-center justify-center p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 text-xl md:text-2xl">
+                                <span class="font-extrabold text-slate-900 dark:text-white">Working software</span>
+                                <span class="text-primary font-bold italic opacity-60">over</span>
+                                <span class="text-slate-500 dark:text-slate-500 font-medium">comprehensive documentation</span>
+                            </div>
+                        </div>
+                        <div class="group flex items-center justify-center p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 text-xl md:text-2xl">
+                                <span class="font-extrabold text-slate-900 dark:text-white">Customer collaboration</span>
+                                <span class="text-primary font-bold italic opacity-60">over</span>
+                                <span class="text-slate-500 dark:text-slate-500 font-medium">contract negotiation</span>
+                            </div>
+                        </div>
+                        <div class="group flex items-center justify-center p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 text-xl md:text-2xl">
+                                <span class="font-extrabold text-slate-900 dark:text-white">Responding to change</span>
+                                <span class="text-primary font-bold italic opacity-60">over</span>
+                                <span class="text-slate-500 dark:text-slate-500 font-medium">following a plan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="max-w-2xl bg-slate-900 dark:bg-primary text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden mb-16">
+                    <div class="relative z-10">
+                        <p class="text-lg md:text-xl font-medium italic leading-relaxed">That is, while there is value in the items on the right, we value the items on the left more.</p>
+                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-10">
+                        <span class="material-symbols-outlined !text-9xl">format_quote</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <a href="principles.html" class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5">
+                        <span class="font-bold text-lg">Explore the 12 Principles</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20 mt-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="size-6 bg-primary/20 rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined !text-sm text-primary">code</span>
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 text-sm font-medium">&copy; 2026 Pichers & Pichers</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="translations.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">translate</span>
+                    </a>
+                    <a href="authors.html" class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">people</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
